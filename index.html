@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<title>Dichtruyendrop</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body{
+    margin:0;
+    font-family:Arial, sans-serif;
+    background:#121212;
+    color:#fff;
+}
+
+/* HEADER */
+header{
+    background:#1e1e1e;
+    padding:12px;
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+header h1{
+    font-size:18px;
+    color:#ff9800;
+    margin:0;
+}
+.search-box{flex:1}
+.search-box input{
+    width:100%;
+    padding:8px;
+    border-radius:4px;
+    border:none;
+}
+
+/* CONTENT */
+.container{padding:12px}
+.story-card{
+    background:#1c1c1c;
+    border-radius:8px;
+    padding:12px;
+}
+
+/* COVER */
+.story-cover{
+    width:100%;
+    max-height:400px;
+    object-fit:cover;
+    border-radius:8px;
+}
+
+/* TITLE */
+.story-title{
+    font-size:20px;
+    margin:10px 0;
+    color:#ff9800;
+}
+.story-info{
+    font-size:14px;
+    opacity:.8;
+    margin-bottom:10px;
+}
+
+/* BUTTON */
+.buttons{
+    display:flex;
+    gap:10px;
+    margin-bottom:12px;
+}
+.btn{
+    flex:1;
+    padding:10px;
+    border-radius:6px;
+    border:none;
+    font-size:14px;
+    cursor:pointer;
+}
+.btn-read{background:#4caf50;color:#fff}
+.btn-continue{background:#2196f3;color:#fff}
+
+/* MÔ TẢ */
+.story-desc{
+    background:#222;
+    padding:12px;
+    border-radius:6px;
+    font-size:14px;
+    line-height:1.6;
+    margin-bottom:12px;
+}
+
+/* TIÊU ĐỀ MÔ TẢ */
+.story-desc-title{
+    text-align:center;
+    font-weight:bold;
+    color:#4fc3f7;
+    margin-bottom:8px;
+    cursor:pointer;
+    position:relative;
+}
+
+/* GẠCH NGANG */
+.story-desc-title:before,
+.story-desc-title:after{
+    content:"";
+    display:block;
+    height:1px;
+    background:#4fc3f7;
+    margin:6px 0;
+}
+
+/* DANH SÁCH CHAP */
+.chapter-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-top:10px;
+    margin-bottom:8px;
+}
+.chapter-header input{
+    background:#222;
+    border:none;
+    color:#fff;
+    padding:6px 8px;
+    border-radius:4px;
+    width:110px;
+}
+
+.chapter-list{
+    max-height:300px;
+    overflow-y:auto;
+}
+.chapter{
+    background:#222;
+    padding:10px;
+    border-radius:6px;
+    margin-bottom:8px;
+    display:flex;
+    justify-content:space-between;
+    font-size:14px;
+}
+a{text-decoration:none;color:#fff}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>Dichtruyendrop</h1>
+    <div class="search-box">
+        <input type="text" placeholder="Tìm kiếm truyện...">
+    </div>
+</header>
+
+<div class="container">
+<div class="story-card">
+
+<img class="story-cover" src="cover.jpeg">
+
+<div class="story-title">
+After Transformation, Mine And Her Wild Fantasy
+</div>
+
+<div class="story-info">
+Trạng thái: Đang cập nhật • Lượt xem: 379,959
+</div>
+
+<div class="buttons">
+    <button class="btn btn-read" onclick="location.href='https://dichtruyendrop.github.io/truyen/'">
+        Đọc từ đầu
+    </button>
+    <button class="btn btn-continue" onclick="location.href='https://www.tiktok.com/@dichtruyendrop?_r=1&_t=ZS-92bOPK32Oql'">
+        Kênh Tik Tok
+    </button>
+</div>
+
+<!-- MÔ TẢ -->
+<div class="story-desc">
+    <div class="story-desc-title" onclick="toggleDesc()">
+        MÔ TẢ 🔽
+    </div>
+
+    <div id="desc-content">
+        Tỉnh lại, mất trí nhớ, tự nhiên thấy mình có 2 cơ thể
+        và có thể điều khiển cả hai cùng một lúc.
+    </div>
+</div>
+
+<!-- DANH SÁCH CHAP -->
+<div class="chapter-header">
+    <div>📚 Danh sách chương</div>
+    <input type="text" placeholder="🔍 Tìm chap" onkeyup="timChap(this.value)">
+</div>
+
+<div class="chapter-list">
+
+<a href="chap85.html">
+<div class="chapter">
+    <span>Chương 85</span>
+    <span>12/09/2024</span>
+</div>
+</a>
+
+<a href="https://dichtruyendrop.github.io/truyen/">
+<div class="chapter">
+    <span>Chương 84</span>
+    <span>28/12/2025</span>
+</div>
+</a>
+    
+</div>
+</div>
+</div>
+
+<script>
+function toggleDesc(){
+    let d = document.getElementById("desc-content");
+    d.style.display = (d.style.display === "none") ? "block" : "none";
+}
+
+function timChap(value){
+    value = value.toLowerCase();
+    let chaps = document.querySelectorAll(".chapter");
+    chaps.forEach(c=>{
+        c.style.display = c.innerText.toLowerCase().includes(value)
+            ? "flex"
+            : "none";
+    });
+}
+</script>
+
+</body>
+</html>

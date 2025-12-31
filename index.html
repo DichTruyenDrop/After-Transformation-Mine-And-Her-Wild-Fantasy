@@ -29,11 +29,6 @@ header h1 a{
     color:#ff9800;
     text-decoration:none;
 }
-header h1 a:hover{
-    opacity:0.8;
-}
-
-/* SEARCH BOX */
 .search-box{flex:1}
 .search-box input{
     width:100%;
@@ -49,16 +44,12 @@ header h1 a:hover{
     border-radius:8px;
     padding:12px;
 }
-
-/* COVER */
 .story-cover{
     width:100%;
     max-height:400px;
     object-fit:cover;
     border-radius:8px;
 }
-
-/* TITLE */
 .story-title{
     font-size:20px;
     margin:10px 0;
@@ -96,18 +87,12 @@ header h1 a:hover{
     line-height:1.6;
     margin-bottom:12px;
 }
-
-/* TIÊU ĐỀ MÔ TẢ */
 .story-desc-title{
     text-align:center;
     font-weight:bold;
     color:#4fc3f7;
-    margin-bottom:8px;
     cursor:pointer;
-    position:relative;
 }
-
-/* GẠCH NGANG */
 .story-desc-title:before,
 .story-desc-title:after{
     content:"";
@@ -123,17 +108,15 @@ header h1 a:hover{
     justify-content:space-between;
     align-items:center;
     margin-top:10px;
-    margin-bottom:8px;
 }
 .chapter-header input{
     background:#222;
     border:none;
     color:#fff;
-    padding:6px 8px;
+    padding:6px;
     border-radius:4px;
     width:110px;
 }
-
 .chapter-list{
     max-height:300px;
     overflow-y:auto;
@@ -143,22 +126,20 @@ header h1 a:hover{
     padding:10px;
     border-radius:6px;
     margin-bottom:8px;
+}
+.chapter a{
     display:flex;
     justify-content:space-between;
-    font-size:14px;
+    text-decoration:none;
+    color:#fff;
 }
-a{text-decoration:none;color:#fff}
-.chapter a{display:flex; justify-content:space-between; width:100%;}
-
 </style>
 </head>
 
 <body>
 
 <header>
-    <h1>
-        <a href="https://dichtruyendrop.github.io/DichTruyenDrop/" target="_blank">Dichtruyendrop</a>
-    </h1>
+    <h1><a href="#">Dichtruyendrop</a></h1>
     <div class="search-box">
         <input type="text" placeholder="Tìm kiếm truyện...">
     </div>
@@ -167,7 +148,7 @@ a{text-decoration:none;color:#fff}
 <div class="container">
 <div class="story-card">
 
-<img class="story-cover" src="cover.jpeg" alt="Cover truyện">
+<img class="story-cover" src="cover.jpeg">
 
 <div class="story-title">
 After Transformation, Mine And Her Wild Fantasy
@@ -179,19 +160,16 @@ Trạng thái: Đang cập nhật • Lượt xem: 379,959
 
 <div class="buttons">
     <button class="btn btn-read" onclick="location.href='https://dichtruyendrop.github.io/truyen/'">
-        Đọc từ đầu
+        📖 Đọc từ đầu
     </button>
-    <button class="btn btn-continue" onclick="location.href='https://www.tiktok.com/@dichtruyendrop?_r=1&_t=ZS-92bOPK32Oql'">
-        Kênh Tik Tok
+    <button class="btn btn-continue" onclick="docTiep()">
+        ▶️ Đọc tiếp
     </button>
 </div>
 
 <!-- MÔ TẢ -->
 <div class="story-desc">
-    <div class="story-desc-title" onclick="toggleDesc()">
-        MÔ TẢ 🔽
-    </div>
-
+    <div class="story-desc-title" onclick="toggleDesc()">MÔ TẢ 🔽</div>
     <div id="desc-content">
         Tỉnh lại, mất trí nhớ, tự nhiên thấy mình có 2 cơ thể
         và có thể điều khiển cả hai cùng một lúc.
@@ -205,64 +183,40 @@ Trạng thái: Đang cập nhật • Lượt xem: 379,959
 </div>
 
 <div class="chapter-list">
-
-<div class="chapter">
-    <a href="https://dichtruyendrop.github.io/Chapter-88/">
-        <span>Chương 88</span>
-        <span>30/12/2025</span>
-    </a>
-</div>
-    
-<div class="chapter">
-    <a href="https://dichtruyendrop.github.io/Chapter-87/">
-        <span>Chương 87</span>
-        <span>29/12/2025</span>
-    </a>
+    <div class="chapter"><a href="https://dichtruyendrop.github.io/Chapter-89/"><span>Chương 89</span><span>31/12/2025</span></a></div>
+    <div class="chapter"><a href="https://dichtruyendrop.github.io/Chapter-88/"><span>Chương 88</span><span>30/12/2025</span></a></div>
+    <div class="chapter"><a href="https://dichtruyendrop.github.io/Chapter-87/"><span>Chương 87</span><span>29/12/2025</span></a></div>
+    <div class="chapter"><a href="https://dichtruyendrop.github.io/Chapter86/"><span>Chương 86</span><span>29/12/2025</span></a></div>
+    <div class="chapter"><a href="https://dichtruyendrop.github.io/Chapter85/"><span>Chương 85</span><span>28/12/2025</span></a></div>
 </div>
 
-<div class="chapter">
-    <a href="https://dichtruyendrop.github.io/Chapter86/">
-        <span>Chương 86</span>
-        <span>29/12/2025</span>
-    </a>
-</div>
-
-<div class="chapter">
-    <a href="https://dichtruyendrop.github.io/Chapter85/">
-        <span>Chương 85</span>
-        <span>28/12/2025</span>
-    </a>
-</div>
-
-<div class="chapter">
-    <a href="https://dichtruyendrop.github.io/truyen/">
-        <span>Chương 84</span>
-        <span>28/12/2025</span>
-    </a>
-</div>
-    
-</div>
 </div>
 </div>
 
 <script>
 function toggleDesc(){
-    let d = document.getElementById("desc-content");
-    d.style.display = (d.style.display === "none") ? "block" : "none";
+    const d = document.getElementById("desc-content");
+    d.style.display = d.style.display === "none" ? "block" : "none";
 }
 
 function timChap(value){
     value = value.toLowerCase();
-    let chaps = document.querySelectorAll(".chapter");
-    chaps.forEach(c=>{
+    document.querySelectorAll(".chapter").forEach(c=>{
         c.style.display = c.innerText.toLowerCase().includes(value)
-            ? "flex"
-            : "none";
+            ? "block" : "none";
     });
+}
+
+// 🔥 ĐỌC TIẾP
+function docTiep(){
+    const chap = localStorage.getItem("lastChap");
+    if(chap){
+        window.location.href = "https://dichtruyendrop.github.io/Chapter" + chap + "/";
+    }else{
+        alert("Bạn chưa đọc chap nào 😅");
+    }
 }
 </script>
 
 </body>
-
 </html>
-
